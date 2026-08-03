@@ -39,18 +39,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTotalBooks = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblTotalUsers = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.lblTotalRevenues = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.lblTotalSales = new System.Windows.Forms.Label();
-            this.lblTotalBooks = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -88,6 +88,7 @@
             this.btnLogout.TabIndex = 9;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // label1
             // 
@@ -113,6 +114,7 @@
             this.btnReports.TabIndex = 8;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnUsers
             // 
@@ -142,6 +144,7 @@
             this.btnBooks.TabIndex = 5;
             this.btnBooks.Text = "Books";
             this.btnBooks.UseVisualStyleBackColor = false;
+            this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
             // btnSales
             // 
@@ -156,6 +159,7 @@
             this.btnSales.TabIndex = 6;
             this.btnSales.Text = "Sales";
             this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // lblWelcome
             // 
@@ -187,7 +191,6 @@
             this.label2.Size = new System.Drawing.Size(352, 40);
             this.label2.TabIndex = 4;
             this.label2.Text = "Welcome to Book Store";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
@@ -199,6 +202,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 150);
             this.panel2.TabIndex = 5;
+            // 
+            // lblTotalBooks
+            // 
+            this.lblTotalBooks.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBooks.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblTotalBooks.Location = new System.Drawing.Point(31, 86);
+            this.lblTotalBooks.Name = "lblTotalBooks";
+            this.lblTotalBooks.Size = new System.Drawing.Size(213, 36);
+            this.lblTotalBooks.TabIndex = 10;
+            this.lblTotalBooks.Text = "120";
+            this.lblTotalBooks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label4.Location = new System.Drawing.Point(31, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(213, 36);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Total Books";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -222,6 +247,17 @@
             this.label6.Text = "Total Users";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblTotalUsers
+            // 
+            this.lblTotalUsers.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalUsers.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblTotalUsers.Location = new System.Drawing.Point(31, 81);
+            this.lblTotalUsers.Name = "lblTotalUsers";
+            this.lblTotalUsers.Size = new System.Drawing.Size(213, 36);
+            this.lblTotalUsers.TabIndex = 9;
+            this.lblTotalUsers.Text = "3";
+            this.lblTotalUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.PapayaWhip;
@@ -233,50 +269,16 @@
             this.panel7.Size = new System.Drawing.Size(300, 150);
             this.panel7.TabIndex = 6;
             // 
-            // panel8
+            // lblTotalRevenues
             // 
-            this.panel8.BackColor = System.Drawing.Color.PapayaWhip;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.lblTotalSales);
-            this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(511, 84);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(300, 150);
-            this.panel8.TabIndex = 6;
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.Controls.Add(this.panel7);
-            this.pnlMain.Controls.Add(this.panel8);
-            this.pnlMain.Controls.Add(this.panel2);
-            this.pnlMain.Controls.Add(this.label2);
-            this.pnlMain.Controls.Add(this.panel6);
-            this.pnlMain.Location = new System.Drawing.Point(200, 57);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(884, 604);
-            this.pnlMain.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label4.Location = new System.Drawing.Point(31, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(213, 36);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Total Books";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotalUsers
-            // 
-            this.lblTotalUsers.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalUsers.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lblTotalUsers.Location = new System.Drawing.Point(31, 81);
-            this.lblTotalUsers.Name = "lblTotalUsers";
-            this.lblTotalUsers.Size = new System.Drawing.Size(213, 36);
-            this.lblTotalUsers.TabIndex = 9;
-            this.lblTotalUsers.Text = "3";
-            this.lblTotalUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotalRevenues.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRevenues.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblTotalRevenues.Location = new System.Drawing.Point(47, 81);
+            this.lblTotalRevenues.Name = "lblTotalRevenues";
+            this.lblTotalRevenues.Size = new System.Drawing.Size(213, 36);
+            this.lblTotalRevenues.TabIndex = 8;
+            this.lblTotalRevenues.Text = "$ 2,500";
+            this.lblTotalRevenues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -289,28 +291,16 @@
             this.label5.Text = "Total Revenues";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // panel8
             // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label8.Location = new System.Drawing.Point(47, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(213, 36);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Total Sales";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotalRevenues
-            // 
-            this.lblTotalRevenues.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRevenues.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lblTotalRevenues.Location = new System.Drawing.Point(47, 81);
-            this.lblTotalRevenues.Name = "lblTotalRevenues";
-            this.lblTotalRevenues.Size = new System.Drawing.Size(213, 36);
-            this.lblTotalRevenues.TabIndex = 8;
-            this.lblTotalRevenues.Text = "$ 2,500";
-            this.lblTotalRevenues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTotalRevenues.Click += new System.EventHandler(this.label9_Click);
+            this.panel8.BackColor = System.Drawing.Color.PapayaWhip;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.lblTotalSales);
+            this.panel8.Controls.Add(this.label8);
+            this.panel8.Location = new System.Drawing.Point(511, 84);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(300, 150);
+            this.panel8.TabIndex = 6;
             // 
             // lblTotalSales
             // 
@@ -323,16 +313,28 @@
             this.lblTotalSales.Text = "35";
             this.lblTotalSales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTotalBooks
+            // label8
             // 
-            this.lblTotalBooks.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalBooks.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lblTotalBooks.Location = new System.Drawing.Point(31, 86);
-            this.lblTotalBooks.Name = "lblTotalBooks";
-            this.lblTotalBooks.Size = new System.Drawing.Size(213, 36);
-            this.lblTotalBooks.TabIndex = 10;
-            this.lblTotalBooks.Text = "120";
-            this.lblTotalBooks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label8.Location = new System.Drawing.Point(47, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(213, 36);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Total Sales";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Controls.Add(this.panel7);
+            this.pnlMain.Controls.Add(this.panel8);
+            this.pnlMain.Controls.Add(this.panel2);
+            this.pnlMain.Controls.Add(this.label2);
+            this.pnlMain.Controls.Add(this.panel6);
+            this.pnlMain.Location = new System.Drawing.Point(200, 57);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(884, 604);
+            this.pnlMain.TabIndex = 8;
             // 
             // MainForm
             // 

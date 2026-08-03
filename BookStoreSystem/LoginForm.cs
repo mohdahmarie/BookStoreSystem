@@ -32,19 +32,14 @@ namespace BookStoreSystem
            
             if (role != null)
             {
-                if (role.ToString() == "Admin")
+                if (role.ToString() == "Admin" || role.ToString() == "Cashier")
                 {
-                    MainForm main = new MainForm();
+                    MainForm main = new MainForm(role.ToString() , txtUsername.Text);
                     main.Show();
                     this.Hide();
 
                 }
-                else if (role.ToString() == "Cashier")
-                {
-                    MainForm main = new MainForm();
-                    main.Show();
-                    this.Hide();
-                }
+                
             }
             else
             {
@@ -52,6 +47,11 @@ namespace BookStoreSystem
             }
 
             connection.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }

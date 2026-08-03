@@ -7,11 +7,13 @@ using System.Data.SqlClient;
 
 namespace BookStoreSystem
 {
-    public class DatabaseHelper
+    public static class DatabaseHelper
     {
-        String ConnectionString = @"Server= localhost\SQLEXPRESS; Database= BookStoreDB; Trusted_connection=True; TrustServerCertificate=True;";
+       private static String ConnectionString = @"Server= localhost\SQLEXPRESS; Database= BookStoreDB; Trusted_connection=True; TrustServerCertificate=True;";
 
-        
+        public static SqlConnection GetConnection() {
+            return new SqlConnection(ConnectionString);
+        }
     }
 
 }

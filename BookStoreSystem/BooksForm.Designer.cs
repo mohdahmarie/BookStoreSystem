@@ -49,12 +49,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
-            this.ColBookID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,7 +86,6 @@
             this.label2.Size = new System.Drawing.Size(61, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Title";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -169,7 +162,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Book Information";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cmbCategory
             // 
@@ -223,7 +215,6 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(162, 29);
             this.txtTitle.TabIndex = 19;
-            this.txtTitle.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnUpdate
             // 
@@ -238,6 +229,7 @@
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -252,6 +244,7 @@
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -266,6 +259,7 @@
             this.btnClear.TabIndex = 16;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAdd
             // 
@@ -280,6 +274,7 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtSearch
             // 
@@ -302,6 +297,7 @@
             this.btnSearch.TabIndex = 29;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvBooks
             // 
@@ -311,13 +307,6 @@
             this.dgvBooks.BackgroundColor = System.Drawing.Color.White;
             this.dgvBooks.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColBookID,
-            this.colTitle,
-            this.ColAuthor,
-            this.colCategory,
-            this.colPrice,
-            this.colQuantity});
             this.dgvBooks.Location = new System.Drawing.Point(6, 0);
             this.dgvBooks.MultiSelect = false;
             this.dgvBooks.Name = "dgvBooks";
@@ -326,36 +315,6 @@
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(1084, 281);
             this.dgvBooks.TabIndex = 30;
-            // 
-            // ColBookID
-            // 
-            this.ColBookID.HeaderText = "Book ID";
-            this.ColBookID.Name = "ColBookID";
-            // 
-            // colTitle
-            // 
-            this.colTitle.HeaderText = "Title";
-            this.colTitle.Name = "colTitle";
-            // 
-            // ColAuthor
-            // 
-            this.ColAuthor.HeaderText = "Author";
-            this.ColAuthor.Name = "ColAuthor";
-            // 
-            // colCategory
-            // 
-            this.colCategory.HeaderText = "Category";
-            this.colCategory.Name = "colCategory";
-            // 
-            // colPrice
-            // 
-            this.colPrice.HeaderText = "Price";
-            this.colPrice.Name = "colPrice";
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.HeaderText = "Quantity";
-            this.colQuantity.Name = "colQuantity";
             // 
             // groupBox2
             // 
@@ -414,12 +373,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvBooks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColBookID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.GroupBox groupBox2;
     }
 }
