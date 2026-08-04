@@ -13,10 +13,13 @@ namespace BookStoreSystem
 {
     public partial class MainForm : Form
     {
-        public MainForm(String role, string username )
+        int UserID;
+        public MainForm(String role, string username, int UserID )
         {
+            
             InitializeComponent();
-
+            
+            this.UserID = UserID;
             lblWelcome.Text = "Welcome, " + username;
 
             if (role == "Cashier")
@@ -77,7 +80,7 @@ namespace BookStoreSystem
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            SalesForm salesForm = new SalesForm();
+            SalesForm salesForm = new SalesForm( UserID);
             salesForm.Show();
             this.Hide();
         }

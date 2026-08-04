@@ -24,28 +24,28 @@ namespace BookStoreSystem
 
             SqlConnection connection = new SqlConnection(ConnectionString);
             connection.Open();
-            string sql = "SELECT Role FROM Users WHERE username=@username AND Password=@password";
+            string sql = "SELECT Role , UserID FROM Users WHERE username=@username AND Password=@password";
             SqlCommand cmd = new SqlCommand(sql, connection);
             cmd.Parameters.AddWithValue("@username", txtUsername.Text);
             cmd.Parameters.AddWithValue("Password", txtPassword.Text);
-            object role = cmd.ExecuteScalar();
+            SqlDataReader reader = cmd.ExecuteReader();
            
-            if (role != null)
+            if (reader.Read())
             {
-                if (role.ToString() == "Admin" || role.ToString() == "Cashier")
-                {
-                    MainForm main = new MainForm(role.ToString() , txtUsername.Text);
+                int UserID = int.Parse(reader["UserID"].ToString());
+                string role = reader["Role"].ToString();
+                    MainForm main = new MainForm(role , txtUsername.Text , UserID);
                     main.Show();
                     this.Hide();
 
-                }
+                
                 
             }
             else
             {
                 MessageBox.Show("Username or Password is incorrect!");
             }
-
+            reader.Close();
             connection.Close();
         }
 

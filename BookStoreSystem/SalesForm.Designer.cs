@@ -38,13 +38,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBookTitle = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtAvailableQuantity = new System.Windows.Forms.TextBox();
-            this.txtSaleQuantity = new System.Windows.Forms.TextBox();
             this.btnAddToCart = new System.Windows.Forms.Button();
+            this.txtSaleQuantity = new System.Windows.Forms.TextBox();
+            this.txtAvailableQuantity = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtBookTitle = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dvgCart = new System.Windows.Forms.DataGridView();
+            this.dgvCart = new System.Windows.Forms.DataGridView();
             this.colBookID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,13 +94,13 @@
             this.btnSearchBook.TabIndex = 32;
             this.btnSearchBook.Text = "Search";
             this.btnSearchBook.UseVisualStyleBackColor = false;
+            this.btnSearchBook.Click += new System.EventHandler(this.btnSearchBook_Click);
             // 
             // txtSearchBook
             // 
             this.txtSearchBook.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBook.Location = new System.Drawing.Point(177, 55);
             this.txtSearchBook.Name = "txtSearchBook";
-            this.txtSearchBook.ReadOnly = true;
             this.txtSearchBook.Size = new System.Drawing.Size(238, 29);
             this.txtSearchBook.TabIndex = 31;
             // 
@@ -158,7 +158,6 @@
             this.label5.Size = new System.Drawing.Size(109, 32);
             this.label5.TabIndex = 36;
             this.label5.Text = "Quantity";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // groupBox1
             // 
@@ -183,41 +182,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Book Selection";
             // 
-            // txtBookTitle
-            // 
-            this.txtBookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookTitle.Location = new System.Drawing.Point(177, 103);
-            this.txtBookTitle.Name = "txtBookTitle";
-            this.txtBookTitle.ReadOnly = true;
-            this.txtBookTitle.Size = new System.Drawing.Size(238, 29);
-            this.txtBookTitle.TabIndex = 37;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(177, 148);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.ReadOnly = true;
-            this.txtPrice.Size = new System.Drawing.Size(238, 29);
-            this.txtPrice.TabIndex = 38;
-            // 
-            // txtAvailableQuantity
-            // 
-            this.txtAvailableQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAvailableQuantity.Location = new System.Drawing.Point(177, 192);
-            this.txtAvailableQuantity.Name = "txtAvailableQuantity";
-            this.txtAvailableQuantity.ReadOnly = true;
-            this.txtAvailableQuantity.Size = new System.Drawing.Size(238, 29);
-            this.txtAvailableQuantity.TabIndex = 39;
-            // 
-            // txtSaleQuantity
-            // 
-            this.txtSaleQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaleQuantity.Location = new System.Drawing.Point(177, 243);
-            this.txtSaleQuantity.Name = "txtSaleQuantity";
-            this.txtSaleQuantity.Size = new System.Drawing.Size(238, 29);
-            this.txtSaleQuantity.TabIndex = 40;
-            // 
             // btnAddToCart
             // 
             this.btnAddToCart.BackColor = System.Drawing.Color.Maroon;
@@ -231,10 +195,46 @@
             this.btnAddToCart.TabIndex = 41;
             this.btnAddToCart.Text = "Add to Cart";
             this.btnAddToCart.UseVisualStyleBackColor = false;
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
+            // 
+            // txtSaleQuantity
+            // 
+            this.txtSaleQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaleQuantity.Location = new System.Drawing.Point(177, 243);
+            this.txtSaleQuantity.Name = "txtSaleQuantity";
+            this.txtSaleQuantity.Size = new System.Drawing.Size(238, 29);
+            this.txtSaleQuantity.TabIndex = 40;
+            // 
+            // txtAvailableQuantity
+            // 
+            this.txtAvailableQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAvailableQuantity.Location = new System.Drawing.Point(177, 192);
+            this.txtAvailableQuantity.Name = "txtAvailableQuantity";
+            this.txtAvailableQuantity.ReadOnly = true;
+            this.txtAvailableQuantity.Size = new System.Drawing.Size(238, 29);
+            this.txtAvailableQuantity.TabIndex = 39;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(177, 148);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
+            this.txtPrice.Size = new System.Drawing.Size(238, 29);
+            this.txtPrice.TabIndex = 38;
+            // 
+            // txtBookTitle
+            // 
+            this.txtBookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBookTitle.Location = new System.Drawing.Point(177, 103);
+            this.txtBookTitle.Name = "txtBookTitle";
+            this.txtBookTitle.ReadOnly = true;
+            this.txtBookTitle.Size = new System.Drawing.Size(238, 29);
+            this.txtBookTitle.TabIndex = 37;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dvgCart);
+            this.groupBox2.Controls.Add(this.dgvCart);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Maroon;
             this.groupBox2.Location = new System.Drawing.Point(0, 360);
@@ -243,53 +243,58 @@
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             // 
-            // dvgCart
+            // dgvCart
             // 
-            this.dvgCart.AllowUserToAddRows = false;
-            this.dvgCart.AllowUserToDeleteRows = false;
-            this.dvgCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dvgCart.BackgroundColor = System.Drawing.Color.White;
-            this.dvgCart.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dvgCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCart.AllowUserToAddRows = false;
+            this.dgvCart.AllowUserToDeleteRows = false;
+            this.dgvCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCart.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCart.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colBookID,
             this.colTitle,
             this.colQuantity,
             this.colUnitPrice,
             this.colSubtotal});
-            this.dvgCart.Location = new System.Drawing.Point(0, 0);
-            this.dvgCart.MultiSelect = false;
-            this.dvgCart.Name = "dvgCart";
-            this.dvgCart.ReadOnly = true;
-            this.dvgCart.RowHeadersVisible = false;
-            this.dvgCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgCart.Size = new System.Drawing.Size(1084, 233);
-            this.dvgCart.TabIndex = 39;
+            this.dgvCart.Location = new System.Drawing.Point(0, 0);
+            this.dgvCart.MultiSelect = false;
+            this.dgvCart.Name = "dgvCart";
+            this.dgvCart.ReadOnly = true;
+            this.dgvCart.RowHeadersVisible = false;
+            this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCart.Size = new System.Drawing.Size(1084, 233);
+            this.dgvCart.TabIndex = 39;
             // 
             // colBookID
             // 
             this.colBookID.HeaderText = "Book ID";
             this.colBookID.Name = "colBookID";
+            this.colBookID.ReadOnly = true;
             // 
             // colTitle
             // 
             this.colTitle.HeaderText = "Title";
             this.colTitle.Name = "colTitle";
+            this.colTitle.ReadOnly = true;
             // 
             // colQuantity
             // 
             this.colQuantity.HeaderText = "Quantity";
             this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
             // 
             // colUnitPrice
             // 
             this.colUnitPrice.HeaderText = "Unit Price";
             this.colUnitPrice.Name = "colUnitPrice";
+            this.colUnitPrice.ReadOnly = true;
             // 
             // colSubtotal
             // 
             this.colSubtotal.HeaderText = "Subtotal";
             this.colSubtotal.Name = "colSubtotal";
+            this.colSubtotal.ReadOnly = true;
             // 
             // btnRemoveItem
             // 
@@ -304,6 +309,7 @@
             this.btnRemoveItem.TabIndex = 40;
             this.btnRemoveItem.Text = "Remove Item";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
             // btnClearCart
             // 
@@ -318,6 +324,7 @@
             this.btnClearCart.TabIndex = 42;
             this.btnClearCart.Text = "Clear Cart";
             this.btnClearCart.UseVisualStyleBackColor = false;
+            this.btnClearCart.Click += new System.EventHandler(this.btnClearCart_Click);
             // 
             // btnCompeleteSale
             // 
@@ -332,6 +339,7 @@
             this.btnCompeleteSale.TabIndex = 43;
             this.btnCompeleteSale.Text = "Compelete Sale";
             this.btnCompeleteSale.UseVisualStyleBackColor = false;
+            this.btnCompeleteSale.Click += new System.EventHandler(this.btnCompeleteSale_Click);
             // 
             // lblTotal
             // 
@@ -363,7 +371,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,7 +395,7 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtBookTitle;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dvgCart;
+        private System.Windows.Forms.DataGridView dgvCart;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBookID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
