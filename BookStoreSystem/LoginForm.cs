@@ -24,7 +24,7 @@ namespace BookStoreSystem
 
             SqlConnection connection = new SqlConnection(ConnectionString);
             connection.Open();
-            string sql = "SELECT Role , UserID FROM Users WHERE username=@username AND Password=@password";
+            string sql = "SELECT Role , UserID FROM Users WHERE username=@username AND Password=@password And IsActive = 1;";
             SqlCommand cmd = new SqlCommand(sql, connection);
             cmd.Parameters.AddWithValue("@username", txtUsername.Text);
             cmd.Parameters.AddWithValue("Password", txtPassword.Text);

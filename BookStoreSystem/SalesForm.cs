@@ -187,7 +187,7 @@ namespace BookStoreSystem
                     if (Result > 0)
                     {
                         
-                        string sqlBook = "Update Book SET Quantity - @quantity Where BookID = @BookId";
+                        string sqlBook = "Update Book SET Quantity = Quantity - @quantity Where BookID = @BookId";
                         SqlCommand cmdBook = new SqlCommand(sqlBook, con);
                         cmdBook.Parameters.AddWithValue("@quantity", Quantity);
                         cmdBook.Parameters.AddWithValue("@BookId", BookID);
